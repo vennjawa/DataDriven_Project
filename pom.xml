@@ -30,6 +30,13 @@
 <version>5.2.5</version>
 </dependency>
 
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.11.0</version>
+<scope>test</scope>
+</dependency>
+
 <!-- Log4j2 implementation -->
 <dependency>
 <groupId>org.apache.logging.log4j</groupId>
