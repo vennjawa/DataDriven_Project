@@ -11,79 +11,80 @@
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     <maven.compiler.release>25</maven.compiler.release>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
+<dependencies>
 
-  <dependencies>
-    <!-- Playwright -->
-    <dependency>
-      <groupId>com.microsoft.playwright</groupId>
-      <artifactId>playwright</artifactId>
-      <version>1.54.0</version>
-    </dependency>
+<!-- Playwright -->
+<dependency>
+<groupId>com.microsoft.playwright</groupId>
+<artifactId>playwright</artifactId>
+<version>1.54.0</version>
+</dependency>
 
-    <!-- Apache POI Excel -->
-    <dependency>
-      <groupId>org.apache.poi</groupId>
-      <artifactId>poi-ooxml</artifactId>
-      <version>5.2.5</version>
-    </dependency>
 
-    <!-- TestNG -->
-    <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.11.0</version>
-      <scope>test</scope>
-    </dependency>
+<!-- TestNG -->
+<dependency>
+<groupId>org.testng</groupId>
+<artifactId>testng</artifactId>
+<version>7.10.2</version>
+</dependency>
 
-    <!-- Log4j2 -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>2.24.3</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-api</artifactId>
-      <version>2.24.3</version>
-    </dependency>
 
-    <!-- Log4j2 to SLF4J Bridge (Replaced slf4j-simple to avoid logging conflicts) -->
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-slf4j2-impl</artifactId>
-      <version>2.24.3</version>
-    </dependency>
+<!-- Apache POI Excel -->
+<dependency>
+<groupId>org.apache.poi</groupId>
+<artifactId>poi-ooxml</artifactId>
+<version>5.2.5</version>
+</dependency>
 
-    <!-- JUnit 5 (Scoped to test) -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>5.12.0</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+<!-- Log4j2 implementation -->
+<dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-core</artifactId>
+<version>2.24.3</version>
+</dependency>
 
-  <build>
-    <plugins>
-      <!-- Maven Compiler Plugin configured for modern Java builds -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.13.0</version>
-      </plugin>
+<dependency>
+<groupId>org.apache.logging.log4j</groupId>
+<artifactId>log4j-api</artifactId>
+<version>2.24.3</version>
+</dependency>
 
-      <!-- Surefire Plugin for executing tests via testng.xml -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.5.2</version>
-        <configuration>
-          <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
-          </suiteXmlFiles>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
+
+<!-- SLF4J binding -->
+<dependency>
+<groupId>org.slf4j</groupId>
+<artifactId>slf4j-simple</artifactId>
+<version>2.0.16</version>
+</dependency>
+
+
+</dependencies>
+ <build>
+
+<plugins>
+
+<plugin>
+<groupId>org.apache.maven.plugins</groupId>
+<artifactId>maven-surefire-plugin</artifactId>
+<version>3.5.2</version>
+
+<configuration>
+
+<suiteXmlFiles>
+<suiteXmlFile>
+testng.xml
+</suiteXmlFile>
+</suiteXmlFiles>
+
+</configuration>
+
+</plugin>
+
+</plugins>
+
+</build>
 </project>
