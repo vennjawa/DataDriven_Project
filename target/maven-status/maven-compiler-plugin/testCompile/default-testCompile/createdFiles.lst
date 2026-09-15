@@ -1,5 +1,4 @@
 pages\LoginPage.class
-com\example\FixturesandHooks.class
 utils\ConfigReader.class
 utils\ExcelUtil.class
 pages\TextboxPage.class
